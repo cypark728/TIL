@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void){
+	int list[42] = {};
+	int a;
+	int count = 0;
+	
+	for(int i=0; i<10; i++){
+		cin >> a;
+		list[a%42] ++;
+	}
+	
+	for(int i=0; i<42; i++){
+		if(list[i] > 0){
+			count ++;
+		}
+	}
+	
+	cout << count << endl;
+	
+	
+	return 0;
+}
