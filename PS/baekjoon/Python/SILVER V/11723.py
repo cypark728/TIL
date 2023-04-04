@@ -1,24 +1,32 @@
+import sys
+input = sys.stdin.readline
+
 count = int(input())
 
 s = set()
 
 for i in range(0, count):
     a = list(input().split())
-    if(a[0] == "add"):
-        s.add(int(a[1]))
-    elif(a[0] == "remove"):
-        s.discard(int(a[1]))
-    elif(a[0] == "check"):
-        if(int(a[1]) in s):
+    if(len(a) == 1):
+        x = a[0]
+    else:
+        x, y = a[0], int(a[1])
+        
+    if(x == "add"):
+        s.add(y)
+    elif(x == "remove"):
+        s.discard(y)
+    elif(x == "check"):
+        if(y in s):
             print("1")
         else:
             print("0")
-    elif(a[0] == "toggle"):
-        if(int(a[1]) in s):
-            s.discard(int(a[1]))
+    elif(x == "toggle"):
+        if(y in s):
+            s.discard(y)
         else:
-            s.add(int(a[1]))
-    elif(a[0] == "all"):
-        s = set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
-    elif(a[0] == "empty"):
+            s.add(y)
+    elif(x == "all"):
+        s = set([i for i in range(1, 21)])
+    elif(x == "empty"):
         s = set()
