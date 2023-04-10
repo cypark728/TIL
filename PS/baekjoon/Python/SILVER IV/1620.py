@@ -16,5 +16,3 @@ for j in range(0, m):
         print(a[int(b)])
     else:
         print(a[b])
-print(m)
-print(n)
