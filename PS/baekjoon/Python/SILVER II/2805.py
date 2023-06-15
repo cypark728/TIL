@@ -3,7 +3,6 @@ tree = list(map(int, input().split()))
 
 max_t = max(tree)
 min_t = 1
-result = 0
 
 while min_t <= max_t:
     temp = int((min_t + max_t) // 2)
